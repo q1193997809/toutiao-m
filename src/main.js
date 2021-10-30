@@ -12,6 +12,8 @@ import 'vant/lib/index.css'
 // 使用 lib-flexible动态设置 REM 基准值（html 标签的字体大小）
 import 'amfe-flexible'
 
+import '@/utils/dayjs'
+
 Vue.use(Vant)
 
 Vue.config.productionTip = false

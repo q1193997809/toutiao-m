@@ -82,3 +82,9 @@ body {
 .page-nav-bar .van-nav-bar__title {
   color: #fff;
 }
+.page-nav-bar .van-nav-bar__text {
+  color: #fff;
+}
+.page-nav-bar i::before {
+  color: #fff;
+}

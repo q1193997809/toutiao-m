@@ -5,7 +5,7 @@
       title="登录"
       left-text="返回"
       left-arrow
-      @click-left="onClickLeft"
+      @click-left="$router.back()"
     />
     <!-- 登录表单 -->
     <van-form @submit="onSubmit" ref="loginForm">
@@ -72,7 +72,6 @@ export default {
     }
   },
   methods: {
-    onClickLeft () {},
     async onSubmit () {
       const user = this.user
       this.$toast.loading({
@@ -84,6 +83,8 @@ export default {
         const { data } = await loginAPI(user)
         this.$toast.success('登录成功')
         this.$store.commit('setUser', data.data)
+        // 登录成功跳转到原来页面,下面这个不好
+        this.$router.back()
       } catch (err) {
         if (err.response.status === 400) {
           this.$toast.fail('验证码或手机号错误')

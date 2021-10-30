@@ -9,3 +9,7 @@ export const login = data => request({
 export const sendSms = mobile => request({
   url: `/v1_0/sms/codes/${mobile}`
 })
+
+export const getUserInfo = () => request({
+  url: '/v1_0/user'
+})
